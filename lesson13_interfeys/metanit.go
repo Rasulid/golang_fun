@@ -18,6 +18,10 @@ type animal struct {
 	age  int
 }
 
+func personPrint(person animalAndPerson) {
+	person.print()
+}
+
 func (p *person) print() {
 	fmt.Println("Name: ", p.name)
 	fmt.Println("age: ", p.age)
@@ -33,12 +37,14 @@ func (a *animal) print() {
 func main() {
 	var tom = person{"tom", 12}
 	var a = animal{name: "LIon", age: 12}
-
-	//fmt.Println(tom)
-
+	
 	var obraz animalAndPerson = &tom
 	obraz.print()
 
 	var intanimal animalAndPerson = &a
 	intanimal.print()
+
+	structure := person{name: "John", age: 12}
+
+	personPrint(&structure)
 }
