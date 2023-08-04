@@ -9,6 +9,8 @@ type Person struct {
 
 type WoodBuilder struct {
 	Person
+	Friends []Person
+	Name    string
 }
 
 type email struct {
@@ -22,9 +24,23 @@ type StudentInfo struct {
 	email  email
 }
 
+func (p Person) PrintName() {
+	fmt.Println("Person: ", p.Name)
+}
+
+func (w WoodBuilder) PrintName() {
+	fmt.Println("WoodBuilder:", w.Name)
+}
+
 func main() {
-	//wb := WoodBuilder{Person{Name: "Rasul", Age: 12}}
-	//fmt.Println(wb)
+	wb := WoodBuilder{Person: Person{Name: "Rasul", Age: 12},
+		Friends: []Person{
+			Person{Name: "John", Age: 12},
+			Person{Name: "Mary", Age: 12}},
+		Name: "Jovo"}
+	wb.PrintName()
+	//fmt.Println(wb.Name)
+	fmt.Println("Print  :", wb)
 
 	info := &StudentInfo{
 		name:   "Rasul",
