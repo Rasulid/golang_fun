@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	//variadicFunctions()
+	variadicFunctions()
 	convertToArray()
 }
 
