@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+//https://www.golinuxcloud.com/go-channels/
+
 //func main() {
 //s := []string{"localhost", "localhost1", "localhost3", "localhost4"}
 
